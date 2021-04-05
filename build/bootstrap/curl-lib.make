@@ -63,6 +63,7 @@ endif
 GENERATED :=
 OBJECTS :=
 
+GENERATED += $(OBJDIR)/CMakeCCompilerId.o
 GENERATED += $(OBJDIR)/amigaos.o
 GENERATED += $(OBJDIR)/asyn-ares.o
 GENERATED += $(OBJDIR)/asyn-thread.o
@@ -96,6 +97,7 @@ GENERATED += $(OBJDIR)/digest_sspi.o
 GENERATED += $(OBJDIR)/dotdot.o
 GENERATED += $(OBJDIR)/easy.o
 GENERATED += $(OBJDIR)/escape.o
+GENERATED += $(OBJDIR)/feature_tests.o
 GENERATED += $(OBJDIR)/file.o
 GENERATED += $(OBJDIR)/fileinfo.o
 GENERATED += $(OBJDIR)/formdata.o
@@ -190,6 +192,7 @@ GENERATED += $(OBJDIR)/vtls.o
 GENERATED += $(OBJDIR)/warnless.o
 GENERATED += $(OBJDIR)/wildcard.o
 GENERATED += $(OBJDIR)/x509asn1.o
+OBJECTS += $(OBJDIR)/CMakeCCompilerId.o
 OBJECTS += $(OBJDIR)/amigaos.o
 OBJECTS += $(OBJDIR)/asyn-ares.o
 OBJECTS += $(OBJDIR)/asyn-thread.o
@@ -223,6 +226,7 @@ OBJECTS += $(OBJDIR)/digest_sspi.o
 OBJECTS += $(OBJDIR)/dotdot.o
 OBJECTS += $(OBJDIR)/easy.o
 OBJECTS += $(OBJDIR)/escape.o
+OBJECTS += $(OBJDIR)/feature_tests.o
 OBJECTS += $(OBJDIR)/file.o
 OBJECTS += $(OBJDIR)/fileinfo.o
 OBJECTS += $(OBJDIR)/formdata.o
@@ -380,6 +384,12 @@ endif
 # File Rules
 # #############################################
 
+$(OBJDIR)/CMakeCCompilerId.o: ../../contrib/curl/lib/CMakeFiles/3.10.2/CompilerIdC/CMakeCCompilerId.c
+	@echo $(notdir $<)
+	$(SILENT) $(CC) $(ALL_CFLAGS) $(FORCE_INCLUDE) -o "$@" -MF "$(@:%.o=%.d)" -c "$<"
+$(OBJDIR)/feature_tests.o: ../../contrib/curl/lib/CMakeFiles/feature_tests.c
+	@echo $(notdir $<)
+	$(SILENT) $(CC) $(ALL_CFLAGS) $(FORCE_INCLUDE) -o "$@" -MF "$(@:%.o=%.d)" -c "$<"
 $(OBJDIR)/amigaos.o: ../../contrib/curl/lib/amigaos.c
 	@echo $(notdir $<)
 	$(SILENT) $(CC) $(ALL_CFLAGS) $(FORCE_INCLUDE) -o "$@" -MF "$(@:%.o=%.d)" -c "$<"
